@@ -1,0 +1,15 @@
+#python peogram to print the frequency of a string of each leetr in descending order
+string1=input("Enter the string : ")  #taking input of string
+print(string1)
+count={} #creating the dictionary
+sort_count={} #craeting the dictionary
+most_frequent(string1) #passing the string
+def most_frequent(string):
+    for x in string:
+        if x in count.keys():
+            count[x]+=1
+        else:
+            count[x]=1
+    sort_count=sorted(count.items(),key=lambda y:y[1], reverse=True)  #storing the keys and values of the string in reverse order in sorted dictionary
+    for i in sort_count:
+        print(i[0],"=",i[1])
